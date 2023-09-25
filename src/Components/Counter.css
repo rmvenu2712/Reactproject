@@ -1,0 +1,71 @@
+
+body,html{
+    margin: 0px;
+    padding: 0px; 
+  }
+  .Container-Count{
+    background-color:rgb(61, 59, 69);
+    height: 530px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    color: rgba(0, 255, 149, 0.58);   
+
+  }
+  .Counter{
+    border-bottom: 1px solid  rgb(113, 93, 138);
+    border-radius: 5px 0px 0px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 816px;
+    margin: 25px 0px 0px 0px;
+    background-color: rgba(65, 66, 73, 0.762);
+    padding-top: 30px;
+  }
+  
+  .head{
+    padding: 0px;
+    margin: 0px;
+    font-size: 150px;
+   } 
+   .buttons-group{   
+      display: flex;
+      justify-content: space-around;
+       width: 700px; 
+      background-color: rgba(65, 66, 73, 0);
+      width: 820px;
+
+  }
+  .buttons{
+    width: 100%;
+    display: flex;
+    background-color: transparent; 
+    padding: 5px;
+    height: 200px;
+  }
+  
+  
+  .button1{
+    width: 50%;
+    height: 150px;
+    background-color: transparent;
+    font-size: 50px;
+    color: rgba(0, 255, 149, 0.58);   
+  }
+  .button2{
+    width: 50%;
+     background-color: transparent;
+    color: rgba(0, 255, 149, 0.58);   
+
+  }
+  .button3{
+    width: 50%;
+    height: 150px;
+    background-color: transparent;
+    font-size: 50px;
+    color: rgba(0, 255, 149, 0.58);   
+
+  }

@@ -1,0 +1,19 @@
+body{
+    
+    margin: 0px;
+    padding: 0px;
+}
+.Main-Con{
+    background-color: rgba(212, 212, 212, 0.1);
+    padding: 50px;
+    padding-top: 20px;
+   height: 80vh;
+
+}
+.Mini-Con{
+    background-color:rgba(8, 140, 255, 0.022);
+    width: 350px;
+    border: 2px solid rgba(0, 30, 255, 0.087);
+    border-radius: 10px;
+    height: 500px;
+}
