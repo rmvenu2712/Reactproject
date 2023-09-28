@@ -133,9 +133,7 @@ function Main(props) {
         {menu === 'Form' && <Formre />} 
 
         {menu ===  'Counter' && <Counter/> }
-      
-      
-       
+
       </Box>
     
 
