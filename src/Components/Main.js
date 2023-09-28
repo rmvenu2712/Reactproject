@@ -6,15 +6,11 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Counter from './Counter';
@@ -23,9 +19,9 @@ import Formre from './Formre';
 
 
 
-const drawerWidth = 240;
+const drawerWidth = 250;
 
-function Sam(props) {
+function Main(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
  const [menu, setMenu] = useState('CRUD')
@@ -43,7 +39,7 @@ function Sam(props) {
       <Toolbar />
       <Divider />
       <List>
-        {['Form','Counter','Todo' ].map((text, index) => (
+        {['Todo','Form','Counter' ].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton onClick={() => handleMenuClick(text)} >
               {/* <ListItemIcon>
@@ -56,6 +52,7 @@ function Sam(props) {
       </List>
       
     </div>
+    
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
@@ -85,13 +82,14 @@ function Sam(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
+          <Typography  variant="h6" noWrap component="div">
             My Projects
           </Typography>
+          
         </Toolbar>
-       
+
       </AppBar>
-    
+     
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
@@ -131,10 +129,11 @@ function Sam(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
+        {menu === 'Todo' && <Todo/>}
         {menu === 'Form' && <Formre />} 
 
         {menu ===  'Counter' && <Counter/> }
-        {menu === 'Todo' && <Todo/>}
+      
       
        
       </Box>
@@ -147,7 +146,7 @@ function Sam(props) {
   );
 }
 
-Sam.propTypes = {
+Main.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -155,4 +154,4 @@ Sam.propTypes = {
   window: PropTypes.func,
 };
 
-export default Sam;
+export default Main;

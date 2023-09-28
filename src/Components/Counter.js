@@ -4,6 +4,7 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveIcon from '@mui/icons-material/Remove';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import './Counter.css'
+import { Container } from 'react-bootstrap';
 class Counter extends Component{
     constructor(props){
         super(props);
@@ -24,13 +25,13 @@ render(){
     return(
         <>
                
-        <div className='Container-Count'>
-            <div className='Mini-Container'> 
-             <div className='Counter'>
+        <Container className='Container-Count'>
+            <Container className='Mini-Container m-5 p-3'> 
+             <Container className='Counter pt-3'>
             <h1>Simple Counter</h1>
                 
           <h1 className='head'>{this.state.count}</h1> 
-          </div> 
+          
 
        <div className='buttons-group'> 
          <button className='button1'  onClick={this.decrement}><RemoveIcon/></button>    
@@ -38,9 +39,9 @@ render(){
 
          <button className='button3' onClick={this.increment}><AddCircleOutlineIcon/></button>
                 
-           </div>
-           </div>
-     </div> 
+           </div></Container> 
+           </Container>
+     </Container> 
        
         </> 
     )

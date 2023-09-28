@@ -3,6 +3,8 @@ import './Todo.css'
 import EditSharpIcon from '@mui/icons-material/EditSharp';
 import BeenhereSharpIcon from '@mui/icons-material/BeenhereSharp';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { Button, Container } from 'react-bootstrap';
+import { Input } from '@mui/material';
 
 
 class Todo extends Component {
@@ -59,20 +61,33 @@ class Todo extends Component {
     const { todos, newTodo , editedTodo} = this.state;
     return (<>
  
-      <div className='Todo-Main'>
+      <Container className='Todo-Main'>
+      
         
-        <div className='Todo-Mini'>
-            <h1>Todo List</h1>
-        <div className='Todo-inputs'>
-         <input className='Todo-input1' placeholder='Add Todo' type="text" value={newTodo} onChange={this.handleInputChange} />
-        <button className='Todo-Button'onClick={this.addTodo}>Add Todo</button>
+        <div className='Todo-Mini text-center rounded-top-4 rounded-bottom-3 mx-5'>
+            <h1 className='rounded-top-4  heading'>TODO List</h1>
+
+        <div className='Input1-Con p-3  rounded-4  mx-5 '>
+
+              <Input className='Todo-input1  mb-2 m-3' placeholder='What would you like to do?' type="text" value={newTodo} onChange={this.handleInputChange} /><br/>
+    
+    <Button className='Todo-Button  m-2'onClick={this.addTodo}>Add Todo</Button>
+    </div>
+        <div className='Todo-inputs mb-5 rounded-4 py-3 mx-5'>
+          <h3>Todo List</h3>
+         <div className='list-Heading text-bg-light px-5 pt-3'>
+          <p className='ps-5'>List</p>
+          <div className='d-flex'>
+          <p className='pe-5 me-5'>Delete</p>
+          <p className='pe-4'>Edit</p></div></div>
+
         <ul className='Todo-Ul'> {todos.map((todo, index) => (
     <li  key={index}> 
      
      {this.state.editIndex === index ? (
       <>
     
-      <input className='Todo-Input2'placeholder='Enter the Changes' type='text' value={editedTodo} onChange={ (e) => this.setState({editedTodo:e.target.value})} />
+      <Input className='Todo-Input2 m-3'placeholder='Enter the Changes' type='text' value={editedTodo} onChange={ (e) => this.setState({editedTodo:e.target.value})} />
     <button className='Todo-Sbtn' onClick={ ()=> this.handleEditSave(index)}><BeenhereSharpIcon/> </button>
       </>
      ):(
@@ -90,7 +105,7 @@ class Todo extends Component {
 ))}
 </ul>
 </div>
-      </div></div>
+      </div></Container>
       </>
     );
   }

@@ -1,12 +1,13 @@
 
 import './App.css';
-import Sam from './Components/Sam';
+import Main from './Components/Main';
+
 
 
 function App() {
   return (
     <div>
-   <Sam/>
+   <Main/>
    
     </div>
   );
