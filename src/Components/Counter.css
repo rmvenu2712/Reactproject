@@ -40,3 +40,16 @@ body,html{
     color: rgba(0, 255, 149, 0.58);   
 
   }
+  @media (max-width: 700px){
+    .button1{
+      height: 70px;
+
+    }
+    .button2{
+      height: 70px;
+    }
+    .button3{
+      height: 70px;
+    }
+
+  }

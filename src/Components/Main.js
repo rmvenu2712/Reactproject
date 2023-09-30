@@ -16,6 +16,7 @@ import Typography from '@mui/material/Typography';
 import Counter from './Counter';
 import Todo from './Todo';
 import Formre from './Formre';
+import { ListItemIcon } from '@mui/material';
 
 
 
@@ -126,20 +127,13 @@ function Main(props) {
       
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
-      >
+        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}>
         <Toolbar />
         {menu === 'Todo' && <Todo/>}
         {menu === 'Form' && <Formre />} 
-
         {menu ===  'Counter' && <Counter/> }
-
       </Box>
-    
-
-
     </Box>
-   
     </>
   );
 }

@@ -3,7 +3,7 @@ import './Todo.css'
 import EditSharpIcon from '@mui/icons-material/EditSharp';
 import BeenhereSharpIcon from '@mui/icons-material/BeenhereSharp';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Button, Container } from 'react-bootstrap';
+import { Button} from 'react-bootstrap';
 import { Input } from '@mui/material';
 
 
@@ -61,7 +61,7 @@ class Todo extends Component {
     const { todos, newTodo , editedTodo} = this.state;
     return (<>
  
-      <Container className='Todo-Main'>
+      <div className='Todo-Main'>
       
         
         <div className='Todo-Mini text-center rounded-top-4 rounded-bottom-3 mx-5'>
@@ -76,11 +76,11 @@ class Todo extends Component {
         <div className='Todo-inputs mb-5 rounded-4 py-3 mx-5'>
           <h3>Todo List</h3>
          <div className='list-Heading text-bg-light px-5 pt-3'>
-          <p className='ps-5'>List</p>
+          <p >List</p>           
           <div className='d-flex'>
-          <p className='pe-5 me-5'>Delete</p>
-          <p className='pe-4'>Edit</p></div></div>
-
+          <p className=' dtext'>Delete</p>
+          <p >Edit</p></div></div>
+                                                        
         <ul className='Todo-Ul'> {todos.map((todo, index) => (
     <li  key={index}> 
      
@@ -105,7 +105,7 @@ class Todo extends Component {
 ))}
 </ul>
 </div>
-      </div></Container>
+      </div></div>
       </>
     );
   }

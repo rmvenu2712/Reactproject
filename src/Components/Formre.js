@@ -24,54 +24,50 @@ function Formre(){
    const[merror,setMerror]=useState("");
 
 const myClick=(event) =>{
-    if (setText == ""){
-      setTerror("Enter the value")
-   //  } else{
-   //    setTerror("")
+  
+ if (text == ""){
+      setTerror("Enter the value")   
     }
-    if (num == ""){
-      setNerror("Enter the value")
-    } else{
-      setTerror("")
+    if(num==""){
+      setNerror("Enter the Ph.Number")
     }
-    if (mail == ""){
-      setMerror("Enter the value")
-    }else{
-      setTerror("")
-    } 
-    if (pass<8){
-      setPerror("Password must be at least 8 characters")
-    } else{
-      setTerror("")
+    if(mail==""){
+      setMerror("Invalid email address")
+   }
+    if(pass.trim()<8){
+      setPerror( "Password must be at least 8 characters")
+   }
+   // if(pass!==cpass){
+   //    setCpass("Password is not matched")
+   // }
+    
+    else{
+      alert(`
+           Username :  ${text} ,
+              Phone No : ${num},
+              Email :${mail},
+              Password:${pass},
+              Confirm Password:${cpass}
+              
+              Check your details and Click Ok`)
+                    setTerror("")   
+                   setText("") 
+                   setPass("")
+                    setPerror("")       
+                   setCpass("")
+                   setCperror("")       
+                  setNum("")
+                  setNerror("")       
+                 setMail("")
+                setMerror("")     
     }
-    if (cpass !== pass){
-      setCperror("Password is not matched")
-    } else{
-      setTerror("")
-    }
-    event.preventDefault();
-
-          alert(` 
-             Name     : ${text},
-             Number   : ${num}
-             Email   : ${mail}
-             Password : ${pass},
-Confirm password   : ${cpass},
-             ` 
-             );
-             setText("")
-             
-             setPass("")
-             setCpass("")
-             setNum("")
-             setMail("")
    
 }
  return(
   <> 
     
-     <Container className="Main-Con" >
-     <Form.Group >
+     <div className="Main-Con" >
+     <Form.Group  >
       <Row>
         <Col sm={6} >
         <Row className="p-5 m-5  bg-light Main-Form">
@@ -79,30 +75,34 @@ Confirm password   : ${cpass},
 
      {/* Name---- */}
           <Col className="m-3" xs={12}><Form.Control type="text" placeholder="Enter Name"onChange={(e)=>setText(e.target.value)}value={text}/>
-          <span>{terror}</span></Col>
+          <span className="error">{terror}</span></Col>
           
 
       {/* Number ----*/}
-          <Col className="m-3" xs={12} ><Form.Control type="number" placeholder="Ph.no" onChange={(e)=>setNum(e.target.value)} value={num}/><span>{nerror}</span></Col>
+          <Col className="m-3" xs={12} ><Form.Control type="number" placeholder="Ph.no" onChange={(e)=>setNum(e.target.value)} value={num}/>
+          <span  className="error">{nerror}</span></Col>
 
        {/* Email----- */}
-          <Col  className="m-3" xs={12}><Form.Control type="email" placeholder="@gmail.com"onChange={(e)=>setMail(e.target.value)} value={mail}/><span>{merror}</span></Col>
+          <Col  className="m-3" xs={12}><Form.Control type="email" placeholder="@gmail.com"onChange={(e)=>setMail(e.target.value)} value={mail}/>
+          <span className="error">{merror}</span></Col>
           
      {/* Password------ */}
-          <Col className="m-3" xs={12} ><Form.Control type="Password" placeholder="Create password"onChange={(e)=>setPass(e.target.value)}value={pass} /><span>{perror}</span></Col>
+          <Col className="m-3" xs={12} ><Form.Control type="Password" placeholder="Create password"onChange={(e)=>setPass(e.target.value)}value={pass} />
+          <span className="error">{perror}</span></Col>
 
     {/* Confirm Password---- */}
-          <Col className="m-3" xs={12} ><Form.Control type="Password" placeholder="Confirm Password"onChange={(e)=>setCpass(e.target.value)}value={cpass} /><span>{cperror}</span></Col>
+          <Col className="m-3" xs={12} ><Form.Control type="Password" placeholder="Confirm Password"onChange={(e)=>setCpass(e.target.value)}value={cpass} />
+          <span className="error">{cperror}</span></Col>
 
     {/* BUtton---- */}
-          <Col xs={12} ><Button variant="outline-primary "onClick={myClick}>Submit</Button>{' '}</Col> 
+          <Col xs={12} ><Button className="ms-5 px-5" variant="outline-primary "onClick={myClick}>Submit</Button>{' '}</Col> 
        </Row></Col> 
        <Col sm={6}> 
              <img className="Form-Img" src={Formimg}></img>
         </Col>
         </Row>
-      </Form.Group >
-      </Container>
+      </Form.Group>
+      </div>
       
     </>
    

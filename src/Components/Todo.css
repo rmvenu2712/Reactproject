@@ -8,18 +8,24 @@
  .Todo-Main{
    display: flex;
    justify-content: center;
+   overflow: auto;
 
  }
  .Todo-Mini{
    box-shadow: 5px 10px 20px 1px rgba(42, 42, 42, 0.343);
    width: 100%;
-   background-image: linear-gradient(rgba(238, 238, 238, 0.084),rgba(196, 196, 196, 0.218));
+   background-image: linear-gradient(rgba(238, 238, 238, 0.084),rgba(196, 196, 196, 0.218))
+   ;
+   overflow: auto;
+  
  }
 .Input1-Con{
   position: relative;
    bottom: 70px;
    box-shadow: 3px 5px 10px 3px rgba(49, 49, 49, 0.175);
    background-color: rgb(255, 255, 255);
+   overflow: auto;
+ 
 }
   .Todo-inputs{
    height: 500px;
@@ -42,6 +48,8 @@
    margin: 0px;
    padding: 0px;
    border-radius: 0px 0px 10px 10px;
+   overflow: auto;
+   
  }
  .Todo-MLi{
    display: flex;
@@ -52,8 +60,7 @@
    padding: 10px;
    background-color: transparent;
    overflow: auto;
- 
-   padding-left: 100px;
+   padding-left: 60px;
    border-left: 5px solid rgb(176, 176, 176);
    border-right: 5px solid rgb(176,176,176);
    
@@ -67,13 +74,9 @@
    list-style: none;
  }
  .Todo-Dbtn {
-   padding: 13px 30px;
-   margin-right: 60px;
    border: 0px;
    color: rgba(255, 0, 0, 0.732);
    background-color: transparent;
-   font-size: 15px;
-   
  }
  .Todo-Dbtn:hover{
    filter: drop-shadow(5px 5px 10px  rgb(255, 0, 0));
@@ -81,10 +84,8 @@
 
  }
  .Todo-Ebtn{
-   padding: 13px 30px;
+   padding: 13px 50px 13px 100px;
    border: 0px;
-   margin-right:30px ;
-    font-size: 15px;
    color: rgba(0, 4, 255, 0.765);
    background-color: transparent;
  }
@@ -106,16 +107,15 @@
   color: rgb(0, 255, 13);
   filter: drop-shadow(5px 5px 15px  rgb(0, 255, 47));
  }
+ .dtext{
+  padding-right: 100px;
+ }
  @media (max-width: 700px){
+  .dtext{
+    padding-right: 10px;
+   }
+   .Todo-Mini{
+    width: 400px;
+   }
 
-  .Todo-Dbtn{
-    margin-right: 25px;
-    margin: 20px;
-  }
-  .Todo-Ebtn{
-    margin-right: 10px;
-    margin-right: 25px;
-
-
-  }
 }
